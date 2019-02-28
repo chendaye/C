@@ -6,27 +6,28 @@
 --------------------Configuration: demo - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP80E3.tmp" with contents
+Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP9D68.tmp" with contents
 [
 /nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/demo.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "D:\Develop\learn\demo.c"
 ]
-Creating command line "cl.exe @C:\Users\long\AppData\Local\Temp\RSP80E3.tmp" 
-Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP80E4.tmp" with contents
+Creating command line "cl.exe @C:\Users\long\AppData\Local\Temp\RSP9D68.tmp" 
+Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP9D69.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/demo.pdb" /debug /machine:I386 /out:"Debug/demo.exe" /pdbtype:sept 
 .\Debug\demo.obj
 ]
-Creating command line "link.exe @C:\Users\long\AppData\Local\Temp\RSP80E4.tmp"
+Creating command line "link.exe @C:\Users\long\AppData\Local\Temp\RSP9D69.tmp"
 <h3>Output Window</h3>
 Compiling...
 demo.c
-D:\Develop\learn\demo.c(240) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
 D:\Develop\learn\demo.c(241) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
-D:\Develop\learn\demo.c(232) : warning C4101: 's' : unreferenced local variable
-D:\Develop\learn\demo.c(432) : warning C4101: 'tmp' : unreferenced local variable
-D:\Develop\learn\demo.c(678) : warning C4047: '=' : 'char *' differs in levels of indirection from 'int '
-D:\Develop\learn\demo.c(319) : warning C4715: 'fun16' : not all control paths return a value
+D:\Develop\learn\demo.c(242) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
+D:\Develop\learn\demo.c(233) : warning C4101: 's' : unreferenced local variable
+D:\Develop\learn\demo.c(433) : warning C4101: 'tmp' : unreferenced local variable
+D:\Develop\learn\demo.c(681) : warning C4047: '=' : 'char *' differs in levels of indirection from 'int '
+D:\Develop\learn\demo.c(683) : warning C4047: '>' : 'char *' differs in levels of indirection from 'const int '
+D:\Develop\learn\demo.c(320) : warning C4715: 'fun16' : not all control paths return a value
 Linking...
 
 

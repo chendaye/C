@@ -1,4 +1,5 @@
 #include <stdio.h> 
+#include <stdlib.h>
 #include <math.h>
 #include <string.h>
 
@@ -670,20 +671,129 @@ void fun27(){
 void fun28(){
 	char *s;
 	char ip[36];
+	int flag=1;
 	gets(ip);
 	
 	// 第一次调用 参数 s
 	s=strtok(ip,"."); // 第二个参数字符串
 	while(s != NULL){
 		// 后序调用 参数 null
-		printf("%s\n",s);
+		s=atoi(s);
+
+		if(s>255 || s<0){
+			flag = 0;
+
+		}
+		printf("%d\n",s);
 		s=strtok(NULL,".");
 	}
 
+	if(flag!=1){
+		printf("%s\n", "非法IP");
+	}else{
+		printf("%s\n", "合法IP");
+	}
+}
+
+
+// 连接两个字符串
+void fun29(){
+
+	char a[10];
+	char b[10];
+	char c[22];
+	int i=0,j=0,k=0,p=0;
+	gets(a);
+	gets(b);
+
+	while(a[i] != '\0'){
+		k=0;
+		while(c[k] != '\0'){
+			if(c[k] == a[i]){
+				break;
+			}
+			k++;
+		}
+		if(c[k]=='\0'){
+			c[p]=a[i];
+			p++;
+			//printf("%c\n", a[i]);
+		}
+		i++; 
+
+	}
+
+	while(b[j] != '\0'){
+		k=0;
+		while(c[k] != '\0'){
+			if(c[k] == b[j]){
+				break;
+			}
+			k++;
+		}
+		if(c[k]=='\0'){
+			c[p]=b[j];
+			p++;
+			//printf("%c\n", b[j]);
+		}
+		j++; 
+
+	}
+
+	k=0;
+	while(c[k] != '\0'){
+		if(c[k]>='a' && c[k]<='z'){
+			printf("%c\n", c[k]);
+		}
+			
+			k++;
+	}
+
+}
+
+// 连接字符串
+void fun30(){
+	char a[100];
+	char b[100];
+	char c[200];
+	int i=0,j=0;
+	gets(a);
+	gets(b);
 	
+	while(a[i] != '\0'){
+	
+		c[j] = a[i];
+		i++;j++;
+	}
+
+	i=0;
+	while(b[i] != '\0'){
+		c[j] = b[i];
+		i++; j++;
+	}
+	i=0;
+	
+	for(i=0; i<j; i++){
+		printf("%c",c[i]);
+	}
+	printf("\n");
+
+}
 
 
 
+// n个数排序
+void fun31(){
+	int num[6];
+	int i;
+	for(i=0; i<6; i++){
+		num[i] = getchar();
+	}
+
+	i=0;
+	for(i=0; i<6; i++){
+		printf("%d\n",num[i]);
+	}
 }
 
 
@@ -695,7 +805,7 @@ void main()
 	//int c;
 	//c=strcmp(a,b);
 	//printf("%d\n",c);
-	fun28();
+	fun31();
 } 
 
 // 字符串处理函数
@@ -743,3 +853,18 @@ void main()
 // 作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法  与strset不同，遇到'\0'不会结束，需要给定所要设置的空间大小。
 
 
+// itoa()：整型->字符串
+// ltoa()：长整型值->字符串
+
+// ultoa()：无符号长整型值->字符串
+// gcvt()：浮点型数->字符串，取四舍五入
+// ecvt()：双精度浮点型值->字符串，转换结果中不包含十进制小数点
+// fcvt()：指定位数为转换精度，其余同ecvt()
+
+// atof()：字符串->双精度浮点型值
+// atoi()：字符串->整型值
+
+// atol()：字符串->长整型值
+// strtod()：字符串->双精度浮点型值，并报告不能被转换的所有剩余数字
+// strtol()：字符串->长整值，并报告不能被转换的所有剩余数字
+// strtoul()：将字符串->无符号长整型值，并报告不能被转换的所有剩余数字。
