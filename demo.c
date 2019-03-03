@@ -796,16 +796,121 @@ void fun31(){
 	}
 }
 
+// 冒泡排序
+void fun32(){
+
+	int num[6];
+
+	int i,j,n;
+	int tmp;
+
+	for(i=0;i<6;i++){
+	
+		printf("a[%d]\n",i);
+		scanf("%d",&num[i]);
+	}
+
+	n = sizeof(num);
+	printf("\n%d\n",n);
+	n=6;
+	// 冒泡排序
+	for(i=0;i<n;i++){
+		for(j=n-1;j>i;j--){
+			if(num[j-1]<num[j]){
+				tmp = num[j-1];
+				num[j-1] = num[j];
+				num[j] = tmp;
+			}
+		}	
+	}
+	
+	printf("\n");
+	
+	for(i=0;i<6;i++){
+	
+		printf("%d\n",num[i]);
+	}
+
+}
+
+
+// 判断守形数  
+//itoa(num, str, 10);   
+void fun33(){
+	int a;
+	int b;
+	char ca[10],cb[10];
+	//char *ca;
+	//char *cb;
+
+	int la,lb,flag=1;
+
+	int i=0,j=0;
+	// scanf 格式部分怎么样输入时就要一模一样
+	scanf("%d", &a);
+
+	b = a*a;
+
+	// 整数转化为字符串 
+	// 第一个参数：要转化的整数 第二个参数：存放转化的结果，第三个参数：转化的进制
+
+	// itoa(num, str, 10);   atoi(s)
+	itoa(a,ca,10);
+	itoa(b,cb,10);
+
+	la = strlen(ca);
+	lb = strlen(cb);
+
+	while(la<lb){
+		lb--;
+		i++;
+	}
+
+	for(j=0;j<la;j++){
+		
+		if(ca[j] != cb[i]){
+			//printf("ca=%c,cb=%c\n",ca[j],cb[i]);
+			flag =0;
+			break;
+		}else{
+			i++;
+		}
+	}
+
+	if(flag==1){
+		printf("是守形数\n");
+	}else{
+		printf("不是守形数\n");
+	}
+	
+	//printf("%d\n",i);
+	
+
+	//printf("%d\n%d\n",la,lb);
+
+	printf("%s\n%s\n",ca,cb);
+
+
+}
+
+// atoi(s);
+void fun34(){
+
+	char a[4]= "123";
+
+	int b;
+	b=atoi(a);
+	printf("%d\n",b);
+
+
+}
 
 
 void main() 
 { 
       
-	//char a[6]= "abs",b[6]="sdf";
-	//int c;
-	//c=strcmp(a,b);
-	//printf("%d\n",c);
-	fun31();
+	
+	fun34();
 } 
 
 // 字符串处理函数
@@ -854,6 +959,17 @@ void main()
 
 
 // itoa()：整型->字符串
+/*
+char *  itoa ( int value, char * buffer, int radix );
+它包含三个参数：
+
+value, 是要转换的数字；
+
+buffer, 是存放转换结果的字符串；
+
+radix, 是转换所用的基数，2-36。如，2：二进制，10：十进制，16：十六进制
+*/
+
 // ltoa()：长整型值->字符串
 
 // ultoa()：无符号长整型值->字符串
@@ -868,3 +984,71 @@ void main()
 // strtod()：字符串->双精度浮点型值，并报告不能被转换的所有剩余数字
 // strtol()：字符串->长整值，并报告不能被转换的所有剩余数字
 // strtoul()：将字符串->无符号长整型值，并报告不能被转换的所有剩余数字。
+
+/*
+1. abs
+  原型：extern int abs(int x);  
+  功能：求整数x的绝对值  
+  说明：计算|x|, 当x不为负时返回x，否则返回-x
+
+
+  2. fabs	
+  原型：extern float fabs(float x); 
+  功能：求浮点数x的绝对值  
+  说明：计算|x|, 当x不为负时返回x，否则返回-x
+
+  13. ceil	
+  原型：extern float ceil(float x);  
+  功能：求不小于x的最小整数  
+  说明：返回x的上限，如74.12的上限为75，-74.12的上限为-74。返回值为float类型。
+
+  14. floor	
+  原型：extern float floor(float x);
+  功能：求不大于x的最达整数  
+  说明：返回x的下限，如74.12的下限为74，-74.12的下限为-75。返回值为float类型。
+
+  15. exp	
+  原型：extern float exp(float x);
+  功能：求e的x次幂  
+  说明：e=2.718281828...
+
+  16. fmod	
+  原型：extern float fmod(float x, float y);
+  功能：计算x/y的余数  
+  说明：返回x-n*y，符号同y。n=[x/y](向离开零的方向取整)
+
+  17. modf	
+  原型：extern float modf(float num, float *i);  
+  功能：将浮点数num分解成整数部分和小数部分。  
+  说明：返回小数部分，将整数部分存入*i所指内存中。
+
+  21. log	
+  原型：extern float log(float x);
+  功能：计算x的自然对数。  
+  说明：x的值应大于零。
+
+
+22. log10	
+  原型：extern float log10(float x);
+  功能：计算x的常用对数。  
+  说明：x的值应大于零。\
+
+  23. pow	
+? 原型：extern float pow(float x, float y);??
+? 功能：计算x的y次幂。??
+? 说明：x应大于零，返回幂指数的结果。
+
+
+24. pow10	
+? 原型：extern float pow10(float x);??
+? 功能：计算10的x次幂。??
+? 说明：相当于pow(10.0,x)。
+
+25. sqrt	
+? 原型：extern float sqrt(float x);??
+? 功能：计算x的平方根。??
+? 说明：x应大于等于零。
+
+
+
+*/
