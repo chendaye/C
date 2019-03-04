@@ -906,11 +906,104 @@ void fun34(){
 }
 
 
+// 八进制输出
+void fun35(){
+
+	// 八进制 %o  十六进制 %x
+	int a=16;
+	printf("%o\n",a);
+}
+
+
+// 算阶乘  无符号 unsigned int ;   %u   %5.2f
+void fun36(){
+	int n;
+	unsigned int y1=1,y2=1;
+	int i,j;
+	scanf("%d",&n);
+	
+	for(i=1;i<=n;i+=2){
+		y1*=i;
+	}
+	printf("y1=%u\n",y1);
+
+	for(j=2;j<=n;j+=2){
+		y2*=j;
+	}
+	printf("y2=%u\n",y2);
+
+
+}
+
+// 重复字符
+void fun37(){
+	char s[20];
+	int i=0,j=0;
+	gets(s);
+
+	printf("%s\n", s);
+	while(s[i] != '\0'){
+		j=0;
+		while(s[j] != '\0'){
+			if(s[j] == s[i] && i != j){
+				printf("%c,%d;",s[i],i+1);
+				break;
+			}else{
+				j++;
+			}
+		}
+		i++;
+	}
+	printf("\n");
+	
+}
+
+// 回文字符串
+void fun38(){
+	char s[1000];
+	//char r[1000];
+	int len,i,j;
+
+	int flag=1;
+	gets(s);
+	
+	len = strlen(s);
+	for(i=0,j=len-1;i<len && j>=0;i++,j--){
+		if(s[i] != s[j]){
+			flag=0;
+			break;
+		}
+	}
+
+	if(flag==1){
+		printf("是回文字符串\n");
+	}else{
+		printf("不是回文字符串\n");
+	}
+
+
+}
+
+// N阶楼梯
+void fun39(){
+	int n,two;
+
+	int i,space,total=0;
+	scanf("%d",&n);
+
+	two = n/2;
+
+	for(i=0;i<=two;i++){
+		space = n-two*2+1;
+	}
+
+}
+
 void main() 
 { 
       
 	
-	fun34();
+	fun38();
 } 
 
 // 字符串处理函数
