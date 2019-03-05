@@ -998,7 +998,168 @@ void fun39(){
 	}
 
 }
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//一、改错题
+/*
+（1）程序的功能是：换数。例如:输入： 3和9  输出： 9和3
+注释error的下一行中有错误
+*/
+#include "stdio.h"
+void main()
+{
+   int x, y, t;
 
+   printf("Please input two int numbers:");
+   //===============error==============
+   scanf("%d,%d", x, y );
+   printf("x = %d, y = %d \n", x, y );
+
+  //===============error==============
+   t=x;x=t;y=x;
+  
+  printf("x = %d, y = %d \n", x, y );
+
+}
+
+//一、改错题
+/*
+（2）文件prog.c程序的功能是：任意输入一串字符，以“？”结束，
+分别统计其中字母、数字、其他字符的个数。
+注释error的下一行中有错误
+*/
+#include <stdio.h>
+void main()
+{
+	char c ; int n1=0,n2=0,n3=0;
+  	printf("input characters:");
+	//===============error==============
+  	while( c=getchar( );c!='?')
+	{
+	//===============error==============
+  	  if ('a'<= ch <= 'Z')n1++;
+    	  else if(c>='0'&&c<='9')n2++;
+          else n3++;
+	}
+  	printf("n1=%d, n2=%d, n3=%d\n",n1,n2,n3);
+}
+
+
+//一、改错题
+/*
+（3）文件prog.c程序的功能是：是从键盘输入学号，然后输出学号中百位数字是3的学号，输入0时结束循环。
+
+注释error的下一行中有错误
+*/
+#include <stdio.h>
+void main()
+{ long int num;
+  scanf("%ld",&num);
+	//==========  error ===========
+  while(!num)
+   { 
+		//==========  error ===========
+		if((num%100)/10==3)  
+			printf("\n%ld\n",num);
+        scanf("%ld",&num); 
+   } 
+}
+
+
+//二、编程题
+/*
+（1）利用函数average()求一组数去掉一个最大数和去掉一个最小数后的平均数，
+请编写average()函数。
+*/
+#include "stdio.h"
+#include "test.h"
+#define N 10
+double average(double x[],int n)
+{
+	
+
+}
+
+void main()
+{
+	double a[N]={2,14.5,44.7,1,22.2,16,10.6,9,28.3,6};
+	double aver;
+	
+	aver = average(a,N);
+	printf("average = %lf  ",aver);
+
+
+	test(a,10);
+}
+
+//二、编程题
+/*
+（2）程序<<<QN>>>利用函数fun()使数组a上半三角元素中的值全部置为0,
+请编写函数void fun(int a[ ][N])，例如
+   | 1 9 7 |                                  | 0 0 0 |
+a= | 2 3 8 | ，则返回主程序后a数组中的值应为  | 2 0 0 |
+   | 4 5 6 |                                  | 4 5 0 |
+
+*/
+#define  N  5
+
+#include   "stdio.h"
+#include   "conio.h"
+#include   "stdlib.h"
+#include   "test.h"
+
+void  fun ( int a[][N] )
+{
+
+}
+
+main ( )
+{  int  a[N][N], i, j;
+   printf("***** The array *****\n");
+   for ( i =0;  i<N; i++ )
+   {  for ( j =0; j<N; j++ )
+     {  a[i][j] = rand()%20; printf( "%4d", a[i][j] ); }
+        printf("\n");
+   }
+   fun ( a );
+   printf ("THE  RESULT\n");
+   for ( i =0;  i<N; i++ )
+   {  for ( j =0; j<N; j++ ) printf( "%4d", a[i][j] );
+      printf("\n");
+   }
+   test ( );
+}
+
+
+//二、编程题
+/*
+（3）程序利用函数primecount()求一组数中的质数个数，请编写primecount()函数。
+*/
+#include "stdio.h"
+#include "math.h"
+#include "test.h"
+
+int primecount(int x[],int n)
+{
+	
+
+
+
+}
+
+void main()
+{
+	int a[10]={133,141,44,17,22,16,109,9,27,61};
+	int count;
+
+	count = primecount(a,10);
+	printf("Prime Count =%d\n",count);
+
+	test(a,10);
+}
+
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 void main() 
 { 
       
