@@ -277,10 +277,147 @@ void fun10(){
 	printf("%d\n",'6'-48);
 }
 
+
+
+// 递归实现凑一元
+int fun11(s,n){
+	
+    int a[3]= {1,2,5};
+	int count=0; 
+	int i;
+	if(n>2){
+		if(s==0)
+		    return 1;
+		else
+			return 0;
+	}else{
+		for(i=0;s>=i*a[n];i++){
+			count = count + fun11(s-i*a[n],n+1);
+		}	
+	}
+	return count;
+}
+
+
+void fun12(){
+
+	char c ; int n1=0,n2=0,n3=0;
+  	printf("input characters:");
+	//===============error==============
+  	while( c=getchar( )&& c!='?')
+	{
+	//===============error==============
+  	  if ('a'<= c <= 'Z')n1++;
+    	  else if(c>='0'&&c<='9')n2++;
+          else n3++;
+	}
+
+	printf("n1=%d, n2=%d, n3=%d\n",n1,n2,n3);
+}
+
+
+// 去掉最大最小数求平均数
+void fun13(){
+	int max; 
+	int min;
+	int i=0;
+	int len=0;
+	int total = 0;
+	int num[7] = {34,23,56,78,123,456,567};
+    double res=0.0;
+
+	max=num[0];
+	min=num[0];
+	while(num[i]){
+		if(max<num[i]){
+			max = num[i];
+		}
+
+		if(min > num[i]){
+			min = num[i];
+		}
+		i++;
+		len++;
+	}
+	i=0;
+	len--;
+
+	for(i=0;i<len;i++){
+		if(num[i] != max && num[i] != min){
+			total+=num[i];
+		}
+	}
+	res = total/len;
+
+	printf("%lf\n", res);
+}
+
+// 求一组数中的质数个数
+
+// 求数组 长 sizeof(x)/sizeof((x)[0])
+void fun14(){
+	int n[6] = {2,4,7,8,13,17};
+
+	int count=0;
+	int i = 0,j;
+	int flag;
+	int len=0;
+	//求数组 长
+	len= sizeof(n)/sizeof(n[0]);
+
+	while(i<len){
+		flag = 1; // 假设是质数
+		for(j=2;j<n[i];j++){
+			if(n[i]%j==0){
+				flag=0;
+				break;
+			}
+		}
+		if(flag==1){
+			count++;
+		}
+		i++;
+	}
+
+	printf("%d\n",count);
+
+}
+
+// 字符
+void fun15(){
+	char s[7]="qwerty";
+	int len = sizeof(s)/sizeof(s[0]);
+
+	int len2 = strlen(s);
+
+	printf("%d\n%d\n",len,len2);  // len=7  '\0' 也在其中; len2=6
+}
+
+
+// 打印图形
+void fun16(){
+	int n[] = {9,8,7,6,5,4,3,2,1};
+	int i,j;
+
+	for(i=0;i<8;i++){
+		for(j=0;j<i+1;j++){
+			printf("*");
+		}
+
+		while(j<9){
+			printf("%d",n[j]);
+			j++;
+		}
+		printf("\n");
+	}
+}
+
+
+
 void main(){
 
 	
-	fun10();
+	fun16();
 	
 }
 
