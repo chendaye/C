@@ -412,12 +412,65 @@ void fun16(){
 	}
 }
 
+// 打印斐波拉契数列（30个数）并统计其中的质数
+
+// 判断是否是质数， 要排除1
+int is_prime(long p){
+	int i;
+	int flag = 1;
+	for(i=2;i<p;i++){
+		if(p%i == 0){
+			flag = 0;
+			break;
+		}
+	}
+
+	if(p == 1){
+		flag = 0; // 1 不是质数
+	}
+	return flag;
+}
+// 斐波拉契数列的递归
+void fun17(int f1, int f2, int count, int total){
+
+	if(total>30){
+		return;
+	}else{
+		if(is_prime(f1) == 1){
+			count++;
+			printf("%d：是质数\n", f1);
+		}
+		if(is_prime(f2) == 1){
+			count++;
+			printf("%d：是质数\n", f2);
+		}
+
+		printf("\n");
+
+		printf("  %d  %d\n", f1,f2);
+
+		// 斐波拉契数列的递归
+		f1 = f1+f2;
+		f2 = f1+f2;
+		total+=2;
+
+		// 递归
+		fun17(f1,f2,count,total);
+
+	}
+}
+
+// 袋子里有2红3绿5黄球，随机从中摸出8个，打印显示所有组合
+void fun18(){
+
+	
+}
 
 
 void main(){
 
 	
-	fun16();
+	fun17(1,1,0,0);
 	
 }
 
