@@ -462,15 +462,90 @@ void fun17(int f1, int f2, int count, int total){
 
 // 袋子里有2红3绿5黄球，随机从中摸出8个，打印显示所有组合
 void fun18(){
+	int ball[] = {2,3,5};
 
+	int i,j,k;
+
+	// 红球i个
+	for(i=1;i<=2;i++){
+		// 绿球j个
+		for(j=1;j<=3;j++){
+			// 黄球的个数 《=5 
+			k = 8-i-j;
+			if(k <= 5){
+				// 要求的并不是排列； 而是每个球各有多少个
+				printf("%d红,%d绿,%d黄\n", i,j,k);
+			}
+		}
+	}
 	
 }
 
 
+// 整数分割
+
+int c[10]; 
+void fun(int n,int m,int index){ //m表示上一个加的数，n表示剩余没加的数之和 
+	int i,j;
+	if(n==0){
+		for(i=0;i<index-1;i++){
+			printf("%d + ",c[i]);
+		}
+		printf("%d\n",c[index-1]);
+	}
+	for(j=n;j>0;j--){
+		if(j<=m){
+			c[index] = j;
+			// 递归
+			fun(n-j,j,index+1);	
+		}
+	}
+	
+}
+
+void fun19(){
+	
+	int n;
+	while(scanf("%d",&n)!=EOF){
+		fun(n,n,0);
+	} 
+	return 0;
+}
+
+
+// 打印ip
+void fun20(){
+
+	char ip[20];
+	char str[20];
+	int num,i=1;
+
+	// 返回的是一个地址
+	char *s;
+	gets(ip);
+
+	// 第二个参数是字符串
+	s = strtok(ip, ".");
+	while(s != NULL){
+		num = atoi(s);
+		itoa(num,str,2);
+		printf("%s",str);
+		
+		if(i<=3){
+			printf(".");
+		    i++;
+		}else{
+			printf("\n");
+		}
+		
+		s = strtok(NULL,".");
+	}
+}
+
 void main(){
 
-	
-	fun17(1,1,0,0);
+	fun20();
+
 	
 }
 
