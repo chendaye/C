@@ -6,34 +6,40 @@
 --------------------Configuration: demo - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP548B.tmp" with contents
+Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP245.tmp" with contents
 [
 /nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/demo.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\Develop\learn\demo.c"
+"E:\learn\C\demo.c"
 ]
-Creating command line "cl.exe @C:\Users\long\AppData\Local\Temp\RSP548B.tmp" 
-Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP549B.tmp" with contents
+Creating command line "cl.exe @C:\Users\long\AppData\Local\Temp\RSP245.tmp" 
+Creating temporary file "C:\Users\long\AppData\Local\Temp\RSP246.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/demo.pdb" /debug /machine:I386 /out:"Debug/demo.exe" /pdbtype:sept 
 .\Debug\demo.obj
 ]
-Creating command line "link.exe @C:\Users\long\AppData\Local\Temp\RSP549B.tmp"
+Creating command line "link.exe @C:\Users\long\AppData\Local\Temp\RSP246.tmp"
 <h3>Output Window</h3>
 Compiling...
 demo.c
-D:\Develop\learn\demo.c(241) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
-D:\Develop\learn\demo.c(242) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
-D:\Develop\learn\demo.c(233) : warning C4101: 's' : unreferenced local variable
-D:\Develop\learn\demo.c(433) : warning C4101: 'tmp' : unreferenced local variable
-D:\Develop\learn\demo.c(681) : warning C4047: '=' : 'char *' differs in levels of indirection from 'int '
-D:\Develop\learn\demo.c(683) : warning C4047: '>' : 'char *' differs in levels of indirection from 'const int '
-D:\Develop\learn\demo.c(320) : warning C4715: 'fun16' : not all control paths return a value
-Linking...
+E:\learn\C\demo.c(241) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
+E:\learn\C\demo.c(242) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
+E:\learn\C\demo.c(233) : warning C4101: 's' : unreferenced local variable
+E:\learn\C\demo.c(433) : warning C4101: 'tmp' : unreferenced local variable
+E:\learn\C\demo.c(681) : warning C4047: '=' : 'char *' differs in levels of indirection from 'int '
+E:\learn\C\demo.c(683) : warning C4047: '>' : 'char *' differs in levels of indirection from 'const int '
+E:\learn\C\demo.c(1032) : error C2084: function 'void __cdecl main()' already has a body
+E:\learn\C\demo.c(1036) : error C2143: syntax error : missing ')' before ';'
+E:\learn\C\demo.c(1036) : error C2059: syntax error : ')'
+E:\learn\C\demo.c(1037) : error C2143: syntax error : missing ';' before '{'
+E:\learn\C\demo.c(1037) : warning C4552: '!=' : operator has no effect; expected operator with side-effect
+E:\learn\C\demo.c(1039) : error C2065: 'ch' : undeclared identifier
+E:\learn\C\demo.c(1074) : fatal error C1083: Cannot open include file: 'test.h': No such file or directory
+Ö´ÐÐ cl.exe Ê±³ö´í.
 
 
 
 <h3>Results</h3>
-demo.exe - 0 error(s), 0 warning(s)
+demo.exe - 1 error(s), 0 warning(s)
 </pre>
 </body>
 </html>

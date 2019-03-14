@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/C.iml" filepath="$PROJECT_DIR$/.idea/C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../es6/.idea/es6.iml" filepath="$PROJECT_DIR$/../es6/.idea/es6.iml" />
+      <module fileurl="file://Y:/www/hkoa/.idea/hkoa.iml" filepath="Y:/www/hkoa/.idea/hkoa.iml" />
+    </modules>
+  </component>
+</project>
