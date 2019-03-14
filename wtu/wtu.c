@@ -545,18 +545,4 @@ void fun20(){
 void main(){
 
 	fun20();
-
-	
 }
-
-// 开根号 sqrt()
-// arcsin(x)arccos(x)arctan(x)arccot(x)
-
-// sin(x*180/3.1415926)
-
-// arcsin(x)arccos(x)arctan(x)arccot(x)
-//调用三角函数之前先把角度换算成弧度，调用反三角函数之后把弧度换算成角度
-//1度=π/180≈0.01745弧度，1弧度=180/π≈57.3度
-
-
-// 字符数字 - 48 = 整型数字

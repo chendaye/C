@@ -8,7 +8,7 @@ void fun1()
         int sign=1;
 		double pi=0.0,tmp=1.0;
 
-		while(fabs(tmp)>1e-1){ 
+		while(fabs(tmp)>1.0e+1){ 
 			pi+=(1.0/tmp)*sign;
 
 			sign=-sign;
@@ -149,7 +149,7 @@ void fun7(int a){
 			x*=10;
 			m--;
 		}
-		sum=sum + a*x*i;
+		sum=sum + a*x*i;  //  a*x  有 i 个  a00 有1个  a0有2个  a有3个
 		i++;
 	}
 
@@ -482,7 +482,7 @@ void fun21(){
 // 输出图形
 void fun22(){
 	int i,j;
-	char sp=' ';
+	char sp=' '; 
 
 	for(i=0;i<5;i++){
 		
@@ -1167,81 +1167,3 @@ void main()
 	fun38();
 } 
 
-
-
-// +++++++++++++++++++++++++++++++++++++++++++++字符串+++++++++++++++++++++++++++++++++++++++++
-
-// int strlen ( const char *str )  返回字符串的实际长度，不含 '\0'。
-
-// 分割字符串
-// char *strtok(char *s, const char *delim);
-// 分解字符串为一组字符串。s为要分解的字符串，delim为分隔符字符串
-
-//  复制字符串
-// char *strcpy( char *dest, const char *src )  把src所指向的以 '\0'结尾的字符串复制到dest所指向的数组中
-// char *strncpy(char *dest, const char *src, size_t n)   将参数src字符串拷贝前n个字符至参数dest所指的地址
-
-
-// 比较字符串
-// int strcmp( char *str1, char *str2 )  比较str1和str2的大小;  相等返回0，str1大于str2返回1，str1小于str2返回-1；
-// strncmp
-
-
-// 连接字符串
-// char *strcat(char *dest, const char *src)  将参数src字符串拷贝到参数dest所指的字符串尾
-// strncat
-
-
-// 查找 字符位置
-// char* strchr(const *s, int c)
-// 用来找出参数s字符串中第一个出现参数c的地址，然后将该字符出现的地址返回
-
-// void* memchr(const void *s, int c, size_t n);
-// 从buf所指内存区域的前n个字节查找字符c  当第一次遇到字符c时停止查找。如果成功，返回指向字符c的指针；否则返回NULL  与strchr不同，它不会遇到'\0'而结束
-
-// char* strstr(const char *haystack, const char *needle)
-// Strstr()会从字符串 haystack中搜寻字符串needle，并将第一次出现的地址返回  返回指定字符串第一次出现的地址，否则返回0
-
-
-
-
-// 设置字符串
-// char *strset(char *s, char c);
-// 把字符串s中的所有字符都设置成字符c
-
-// void *memset(void *s, int ch, size_t n);
-// 作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法  与strset不同，遇到'\0'不会结束，需要给定所要设置的空间大小。
-
-
-
-// itoa()：整型值->字符串 char *  itoa ( int value, char * buffer, int radix ); value, 是要转换的数字 buffer, 是存放转换结果的字符串 radix ??
-// atoi()：字符串->整型值
-
-
-// ltoa()：长整型值->字符串
-// ultoa()：无符号长整型值->字符串
-
-// atol()：字符串->长整型值
-// atof()：字符串->双精度浮点型值
-
-// gcvt()：浮点型数->字符串，取四舍五入
-// ecvt()：双精度浮点型值->字符串，转换结果中不包含十进制小数点
-// fcvt()：指定位数为转换精度，其余同ecvt()
-
-
-// strtod()：字符串->双精度浮点型值，并报告不能被转换的所有剩余数字
-// strtol()：字符串->长整值，并报告不能被转换的所有剩余数字
-// strtoul()：将字符串->无符号长整型值，并报告不能被转换的所有剩余数字。
-
-
-
-// +++++++++++++++++++++++++++++++++++++++++++++数学+++++++++++++++++++++++++++++++++++++++++
-
-// sqrt  extern float sqrt(float x);  计算x的平方根
-// abs   extern int abs(int x);    求整数x的绝对值  fabs extern float ceil(float x);  求浮点数x的绝对值
-// ceil  不小于x的最小整数  floor  extern float floor(float x); 求不大于x的最达整数
-// exp   extern float exp(float x);  求e的x次幂
-// pow   extern float pow(float x, float y); 计算x的y次幂
-// modf  extern float modf(float num, float *i); 将浮点数num分解成整数部分和小数部分；返回小数部分，将整数部分存入*i所指内存中
-// fmod  extern float fmod(float x, float y);  计算x/y的余数
-// log   extern float log(float x);  计算x的自然对数    log10  extern float log10(float x);  计算x的常用对数
