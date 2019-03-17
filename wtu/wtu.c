@@ -127,7 +127,7 @@ void fun6(){
 		res = (sqrt(x)+exp(x))/(5*x+5);
 	}else{
 		// 把60度 转化为弧度
-		res = (2/3 + sin(3.1415926/180*60))*abs(x);
+		res = (2/3 + sin(3.1415926*40/180))*abs(x);
 	}
 
 	printf("%6.4lf\n",res);
@@ -542,7 +542,22 @@ void fun20(){
 	}
 }
 
+
+
+void fun21(){
+
+	char a[10];
+	int i=0,j=0;
+	scanf("%s",&a);
+	i = strlen(a);
+	j = sizeof(a)/sizeof(a[0]);
+	printf("%s\n", a);
+	printf("%d\n", i);
+	printf("%d\n",j);
+}
+
+
 void main(){
 
-	fun20();
+	fun21();
 }
